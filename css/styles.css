@@ -1,0 +1,124 @@
+/* styles.css */
+
+:root {
+    --white-color: #FCFCFC;
+    --blue-color: #314452;
+    --green-color: #334455;
+    --text-color: #333333;
+    --font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--white-color);
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-banner {
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0;
+    position: relative;
+}
+
+.main-banner .container {
+    position: relative;
+    z-index: 2;
+}
+
+.main-banner h1 {
+    font-size: 3rem;
+}
+
+.main-banner p {
+    font-size: 1.5rem;
+}
+
+#features .card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--white-color);
+}
+
+#features .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+#features .card-title {
+    color: var(--blue-color);
+}
+
+.stat-box {
+    background-color: var(--green-color);
+    color: var(--white-color);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stat-box h3 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.stat-box p {
+    font-size: 1.25rem;
+}
+
+#agents .carousel-inner img {
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.footer a {
+    color: var(--white-color);
+    text-decoration: underline;
+}
+
+.footer a:hover {
+    color: #ddd;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .main-banner h1 {
+        font-size: 2.5rem;
+    }
+    .main-banner p {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-banner {
+        padding: 100px 0;
+    }
+    .main-banner h1 {
+        font-size: 2rem;
+    }
+    .main-banner p {
+        font-size: 1rem;
+    }
+}

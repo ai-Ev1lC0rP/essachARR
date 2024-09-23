@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novique Enterprise</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header bg-primary text-white">
+        <nav class="navbar navbar-expand-lg background">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Novique Enterprise</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Reusable Navigation Component -->
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Solutions
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="solutionsDropdown">
+                                <li><a class="dropdown-item" href="solution1.html">Solution 1</a></li>
+                                <li><a class="dropdown-item" href="solution2.html">Solution 2</a></li>
+                                <li><a class="dropdown-item" href="solution3.html">Solution 3</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center text-white d-flex align-items-center">
+        <div class="container">
+            <h1 class="display-4">Innovate. Transform. Succeed.</h1>
+            <p class="lead mt-3">Empowering businesses with cutting-edge technology solutions.</p>
+            <a href="#features" class="btn btn-light btn-lg mt-4">Discover More</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Key Features</h2>
+            <div class="row g-4">
+                <!-- Reusable Feature Component -->
+                <div class="col-md-4">
+                    <div class="feature-card card h-100 text-center p-4">
+                        <div class="feature-icon mb-3">
+                            <i class="bi bi-speedometer2 fs-1 text-primary"></i>
+                        </div>
+                        <h5 class="card-title">High Performance</h5>
+                        <p class="card-text">Optimized solutions ensuring peak performance across all platforms.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card card h-100 text-center p-4">
+                        <div class="feature-icon mb-3">
+                            <i class="bi bi-shield-lock fs-1 text-primary"></i>
+                        </div>
+                        <h5 class="card-title">Robust Security</h5>
+                        <p class="card-text">Advanced security measures to protect your data and infrastructure.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card card h-100 text-center p-4">
+                        <div class="feature-icon mb-3">
+                            <i class="bi bi-gear fs-1 text-primary"></i>
+                        </div>
+                        <h5 class="card-title">Customizable Solutions</h5>
+                        <p class="card-text">Tailored solutions to meet the unique needs of your business.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics-section py-5 bg-light">
+        <div class="container">
+            <div class="row text-center">
+                <!-- Reusable Statistic Component -->
+                <div class="col-md-3">
+                    <div class="stat-card p-4">
+                        <h3 class="text-primary">500+</h3>
+                        <p>Clients Served</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card p-4">
+                        <h3 class="text-primary">1,000+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card p-4">
+                        <h3 class="text-primary">98%</h3>
+                        <p>Customer Satisfaction</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card p-4">
+                        <h3 class="text-primary">24/7</h3>
+                        <p>Support Availability</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">What Our Clients Say</h2>
+            <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- Reusable Testimonial Component -->
+                    <div class="carousel-item active">
+                        <div class="testimonial text-center">
+                            <p class="lead">"Novique Enterprise transformed our business processes, leading to a 40% increase in efficiency."</p>
+                            <h5>- Jane Doe, CEO of TechCorp</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="testimonial text-center">
+                            <p class="lead">"Their innovative solutions are unmatched. Highly recommend!"</p>
+                            <h5>- John Smith, Founder of InnovateX</h5>
+                        </div>
+                    </div>
+                    <!-- Additional testimonials can be added here -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-primary text-white py-4">
+        <div class="container text-center">
+            <p>Contact us at <a href="mailto:info@noviqueenterprise.com" class="text-white">info@noviqueenterprise.com</a></p>
+            <p>&copy; 2023 Novique Enterprise. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Script -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
