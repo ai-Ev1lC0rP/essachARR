@@ -1,0 +1,26 @@
+
+name: Deploy
+
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3  # Updated to the latest version
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3  # Updated to the latest version
+      with:
+        node-version: '16'  # Set to '16', can be changed to '20' once required
+
+    - name: Deploy to GitHub Pages
+      env:
+        PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git remote set-url origin https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git
+        git push origin gh-pages
