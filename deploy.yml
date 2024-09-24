@@ -9,10 +9,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3  # Updated to the latest version
+      uses: actions/checkout@v4  # Updated to the latest version
 
     - name: Setup Node.js
-      uses: actions/setup-node@v3  # Updated to the latest version
+      uses: actions/setup-node@v4  # Updated to the latest version
       with:
         node-version: '20'  # Set to '16', can be changed to '20' once required
 
@@ -22,7 +22,7 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git remote set-url origin https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git
+        git remote set-url origin https://x-access-token:${{ secrets.ACCESS_TOKEN }}@github.com/${{ github.repository }}.git
         git push origin github-pages
 
 on:
