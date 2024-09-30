@@ -10,19 +10,28 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Set up environment
-        run: |
-          echo "Setting up environment on macOS self-hosted runner"
-          # Add any necessary setup steps here
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
 
-      - name: Build and deploy
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy
         run: |
-          echo "Building and deploying the project"
-          # Add your build and deploy commands here
+          echo "Deploying the project"
+          # Add your deployment commands here
+          # For example, if you're deploying to a server:
+          # scp -r .next/* user@your-server:/path/to/deployment/directory
 
       - name: Cleanup
         run: |
           echo "Performing post-deployment cleanup"
-          # Add any cleanup steps here
+          npm prune --production
+          # Add any other cleanup steps here
