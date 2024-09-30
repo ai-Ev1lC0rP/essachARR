@@ -25,10 +25,15 @@ jobs:
 
       - name: Deploy
         run: |
-          echo "Deploying the project"
-          # Add your deployment commands here
-          # For example, if you're deploying to a server:
-          # scp -r .next/* user@your-server:/path/to/deployment/directory
+          echo "Deploying the static files"
+          # Replace '/path/to/your/webserver/directory' with the actual path on your server
+          cp -R out/* /path/to/your/webserver/directory/
+
+      - name: Restart web server (if necessary)
+        run: |
+          # If you're using a specific web server that needs restarting, add the command here
+          # For example, for Nginx:
+          # sudo systemctl restart nginx
 
       - name: Cleanup
         run: |
