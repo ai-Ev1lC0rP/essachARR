@@ -26,17 +26,16 @@ jobs:
       - name: Deploy
         run: |
           echo "Deploying the static files"
-          # Replace '/path/to/your/webserver/directory' with the actual path on your server
-          cp -R out/* /path/to/your/webserver/directory/
-
-      - name: Restart web server (if necessary)
-        run: |
-          # If you're using a specific web server that needs restarting, add the command here
-          # For example, for Nginx:
-          # sudo systemctl restart nginx
+          # Copy the built files to the runner's workspace
+          cp -R out/* /Users/ev1lc0rp/Development/actions-runner/_work/essachARR/essachARR/
 
       - name: Cleanup
         run: |
           echo "Performing post-deployment cleanup"
           npm prune --production
           # Add any other cleanup steps here
+
+      - name: Print deployment info
+        run: |
+          echo "Deployment completed. Files are available in the runner's workspace."
+          echo "You may need to configure a web server to serve these files."
