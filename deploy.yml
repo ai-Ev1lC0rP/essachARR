@@ -3,7 +3,7 @@ name: Deploy to GH Pages
 on:
   push:
     branches:
-      - master  # Trigger the workflow on push to the master branch
+      - main  # Correct branch name
 
 jobs:
   build-and-deploy:
@@ -11,18 +11,18 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4  # Checkout the repository
+      uses: actions/checkout@v4
 
     - name: Setup Node.js
-      uses: actions/setup-node@v4  # Setup Node.js
+      uses: actions/setup-node@v4
       with:
-        node-version: '18'  # Specify the Node.js version
+        node-version: '18'
 
     - name: Install dependencies
-      run: npm install  # Install the project dependencies
+      run: npm install
 
     - name: Run Build
-      run: npm run build  # Run the build script
+      run: npm run build
 
     - name: Deploy to GitHub Pages
       env:
@@ -30,7 +30,8 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git remote set-url origin "https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+        git remote set-url origin "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+        rsync -av --delete ./out/ .
         git add .
         git commit -m "Deploy to GitHub Pages"
-        git push origin master
+        git push origin main
