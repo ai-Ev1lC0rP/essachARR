@@ -1,27 +1,36 @@
-
 name: Deploy to GH Pages
 
-on: [push]
+on:
+  push:
+    branches:
+      - master  # Trigger the workflow on push to the master branch
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4  # Updated to the latest version
+      uses: actions/checkout@v4  # Checkout the repository
 
     - name: Setup Node.js
-      uses: actions/setup-node@v4  # Updated to the latest version
+      uses: actions/setup-node@v4  # Setup Node.js
       with:
-        node-version: '18'  # Set to '16', can be changed to '20' once required
+        node-version: '18'  # Specify the Node.js version
+
+    - name: Install dependencies
+      run: npm install  # Install the project dependencies
+
+    - name: Run Build
+      run: npm run build  # Run the build script
 
     - name: Deploy to GitHub Pages
       env:
-        PAT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        git remote set-url origin "https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+        git add .
+        git commit -m "Deploy to GitHub Pages"
         git push origin master
-
