@@ -36,10 +36,10 @@ const About: React.FC = () => {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-shr-700 hover:text-shr-primary transition-colors duration-300">Solutions</a>
-              <a href="#" className="text-shr-700 hover:text-shr-primary transition-colors duration-300">Pricing</a>
-              <a href="#" className="text-shr-700 hover:text-shr-primary transition-colors duration-300">About</a>
-              <a href="#" className="text-shr-700 hover:text-shr-primary transition-colors duration-300">Contact</a>
+              <button className="text-shr-700 hover:text-shr-primary transition-colors duration-300">Solutions</button>
+              <button className="text-shr-700 hover:text-shr-primary transition-colors duration-300">Pricing</button>
+              <button className="text-shr-700 hover:text-shr-primary transition-colors duration-300">About</button>
+              <button className="text-shr-700 hover:text-shr-primary transition-colors duration-300">Contact</button>
               <button className="bg-gradient-to-r from-shr-primary to-shr-accent1 text-white px-6 py-2 rounded-lg hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-shr-primary/50">
                 Get Started
               </button>
@@ -61,10 +61,10 @@ const About: React.FC = () => {
         {isMenuOpen && (
           <div className="md:hidden absolute w-full bg-white/95 backdrop-blur-md">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <a href="#" className="block px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">Solutions</a>
-              <a href="#" className="block px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">Pricing</a>
-              <a href="#" className="block px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">About</a>
-              <a href="#" className="block px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">Contact</a>
+              <button className="block w-full text-left px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">Solutions</button>
+              <button className="block w-full text-left px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">Pricing</button>
+              <button className="block w-full text-left px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">About</button>
+              <button className="block w-full text-left px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">Contact</button>
               <button className="w-full text-left px-3 py-2 bg-gradient-to-r from-shr-primary to-shr-accent1 text-white rounded-lg hover:scale-105 transition-all duration-300">
                 Get Started
               </button>
@@ -193,32 +193,32 @@ const About: React.FC = () => {
             <div>
               <h3 className="text-sm font-semibold text-shr-800 tracking-wider uppercase">Solutions</h3>
               <ul className="mt-4 space-y-4">
-                <li><a href="#" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Marketing</a></li>
-                <li><a href="#" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Analytics</a></li>
-                <li><a href="#" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Commerce</a></li>
+                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Marketing</button></li>
+                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Analytics</button></li>
+                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Commerce</button></li>
               </ul>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-shr-800 tracking-wider uppercase">Support</h3>
               <ul className="mt-4 space-y-4">
-                <li><a href="#" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Documentation</a></li>
-                <li><a href="#" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Guides</a></li>
+                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Documentation</button></li>
+                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Guides</button></li>
                 <li><a href="mailto:support@shr-technology.com" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Contact</a></li>
               </ul>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-shr-800 tracking-wider uppercase">Company</h3>
               <ul className="mt-4 space-y-4">
-                <li><a href="#" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">About</a></li>
-                <li><a href="#" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Blog</a></li>
-                <li><a href="#" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Careers</a></li>
+                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">About</button></li>
+                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Blog</button></li>
+                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Careers</button></li>
               </ul>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-shr-800 tracking-wider uppercase">Legal</h3>
               <ul className="mt-4 space-y-4">
-                <li><a href="#" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Privacy</a></li>
-                <li><a href="#" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Terms</a></li>
+                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Privacy</button></li>
+                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Terms</button></li>
               </ul>
             </div>
           </div>

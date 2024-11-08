@@ -1,10 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronRight, Globe, Users, TrendingUp, ArrowRight, Check, Star, Sparkles } from 'lucide-react';
+import { Menu, X, ChevronRight, Globe, Users, TrendingUp, ArrowRight, Sparkles } from 'lucide-react';
 
-const Homepage = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [activeFeature, setActiveFeature] = useState(0);
+interface Feature {
+  title: string;
+  description: string;
+  icon: React.ElementType;
+  color: string;
+}
+
+interface Stat {
+  value: string;
+  label: string;
+}
+
+const Homepage: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,7 +25,7 @@ const Homepage = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const features = [
+  const features: Feature[] = [
     {
       title: "Global Reach, Local Impact",
       description: "Connect with agents who understand your local market dynamics",
@@ -35,7 +46,7 @@ const Homepage = () => {
     }
   ];
 
-  const stats = [
+  const stats: Stat[] = [
     { value: "98%", label: "Client Satisfaction" },
     { value: "2500+", label: "Active Agents" },
     { value: "150+", label: "Local Markets" },
@@ -58,10 +69,10 @@ const Homepage = () => {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-shr-700 hover:text-shr-primary transition-colors duration-300">Solutions</a>
-              <a href="#" className="text-shr-700 hover:text-shr-primary transition-colors duration-300">Pricing</a>
-              <a href="#" className="text-shr-700 hover:text-shr-primary transition-colors duration-300">About</a>
-              <a href="#" className="text-shr-700 hover:text-shr-primary transition-colors duration-300">Contact</a>
+              <button className="text-shr-700 hover:text-shr-primary transition-colors duration-300">Solutions</button>
+              <button className="text-shr-700 hover:text-shr-primary transition-colors duration-300">Pricing</button>
+              <button className="text-shr-700 hover:text-shr-primary transition-colors duration-300">About</button>
+              <button className="text-shr-700 hover:text-shr-primary transition-colors duration-300">Contact</button>
               <button className="bg-gradient-to-r from-shr-primary to-shr-accent1 text-white px-6 py-2 rounded-lg hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-shr-primary/50">
                 Get Started
               </button>
@@ -83,10 +94,10 @@ const Homepage = () => {
         {isMenuOpen && (
           <div className="md:hidden absolute w-full bg-white/95 backdrop-blur-md">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <a href="#" className="block px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">Solutions</a>
-              <a href="#" className="block px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">Pricing</a>
-              <a href="#" className="block px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">About</a>
-              <a href="#" className="block px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">Contact</a>
+              <button className="block w-full text-left px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">Solutions</button>
+              <button className="block w-full text-left px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">Pricing</button>
+              <button className="block w-full text-left px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">About</button>
+              <button className="block w-full text-left px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">Contact</button>
               <button className="w-full text-left px-3 py-2 bg-gradient-to-r from-shr-primary to-shr-accent1 text-white rounded-lg hover:scale-105 transition-all duration-300">
                 Get Started
               </button>
@@ -154,11 +165,10 @@ const Homepage = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
+            {features.map((feature) => (
               <div 
                 key={feature.title}
                 className="relative bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
-                onMouseEnter={() => setActiveFeature(index)}
               >
                 <div className={`absolute top-0 left-0 w-full h-1 ${feature.color} rounded-t-xl transition-all duration-300 group-hover:h-2`} />
                 <div className={`flex items-center justify-center h-12 w-12 rounded-lg ${feature.color} text-white mb-4`}>
@@ -200,32 +210,32 @@ const Homepage = () => {
             <div>
               <h3 className="text-sm font-semibold text-shr-800 tracking-wider uppercase">Solutions</h3>
               <ul className="mt-4 space-y-4">
-                <li><a href="#" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Marketing</a></li>
-                <li><a href="#" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Analytics</a></li>
-                <li><a href="#" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Commerce</a></li>
+                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Marketing</button></li>
+                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Analytics</button></li>
+                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Commerce</button></li>
               </ul>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-shr-800 tracking-wider uppercase">Support</h3>
               <ul className="mt-4 space-y-4">
-                <li><a href="#" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Documentation</a></li>
-                <li><a href="#" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Guides</a></li>
+                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Documentation</button></li>
+                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Guides</button></li>
                 <li><a href="mailto:support@shr-technology.com" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Contact</a></li>
               </ul>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-shr-800 tracking-wider uppercase">Company</h3>
               <ul className="mt-4 space-y-4">
-                <li><a href="#" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">About</a></li>
-                <li><a href="#" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Blog</a></li>
-                <li><a href="#" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Careers</a></li>
+                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">About</button></li>
+                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Blog</button></li>
+                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Careers</button></li>
               </ul>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-shr-800 tracking-wider uppercase">Legal</h3>
               <ul className="mt-4 space-y-4">
-                <li><a href="#" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Privacy</a></li>
-                <li><a href="#" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Terms</a></li>
+                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Privacy</button></li>
+                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Terms</button></li>
               </ul>
             </div>
           </div>
