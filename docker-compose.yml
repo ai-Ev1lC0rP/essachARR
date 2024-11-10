@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "100.101.174.97:3000:3000"
     volumes:
       - ./src:/app/src
       - ./public:/app/public
@@ -15,6 +15,11 @@ services:
     environment:
       - NODE_ENV=development
       - CHOKIDAR_USEPOLLING=true
+      - HOST=0.0.0.0
+      - PORT=3000
+      - DANGEROUSLY_DISABLE_HOST_CHECK=true
+      - WDS_SOCKET_HOST=100.101.174.97
+      - WDS_SOCKET_PORT=3000
     stdin_open: true
 
 volumes:

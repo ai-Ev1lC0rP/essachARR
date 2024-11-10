@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Building2, Target, Award, Sparkles, ArrowRight } from 'lucide-react';
+import { Menu, X, Layers, BarChart, ShoppingBag, Users, Pen, BarChart2, Store, Palette, MessageSquare } from 'lucide-react';
 
-const About: React.FC = () => {
+const Solutions: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
@@ -14,11 +14,61 @@ const About: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const highlights: string[] = [
-    "Over 60 years of combined industry experience",
-    "Highly scalable and flexible product implementation",
-    "Solutions for organizations of all sizes",
-    "Ability to address both complex, granular problems and foundational needs"
+  const solutions = [
+    {
+      title: "Marketing Solutions",
+      description: "Powerful tools to enhance your marketing strategies and reach.",
+      icon: Layers,
+      link: "/solutions/marketing"
+    },
+    {
+      title: "Analytics Platform",
+      description: "Data-driven insights to make informed business decisions.",
+      icon: BarChart,
+      link: "/solutions/analytics"
+    },
+    {
+      title: "Commerce Suite",
+      description: "Complete e-commerce solutions for modern businesses.",
+      icon: ShoppingBag,
+      link: "/solutions/commerce"
+    },
+    {
+      title: "AI-Powered Recruiting",
+      description: "Revolutionize your hiring process with intelligent job posting assistance.",
+      icon: Users,
+      link: "/solutions/recruiting"
+    },
+    {
+      title: "Lexi AI Copywriter",
+      description: "Transform ideas into compelling narratives with AI-powered content creation.",
+      icon: Pen,
+      link: "/solutions/lexi"
+    },
+    {
+      title: "Arlo Data Analytics",
+      description: "Your dedicated AI data analyst for accurate insights and strategic decisions.",
+      icon: BarChart2,
+      link: "/solutions/arlo"
+    },
+    {
+      title: "Nova eCommerce AI",
+      description: "Amplify your online store with AI-powered optimization and insights.",
+      icon: Store,
+      link: "/solutions/nova"
+    },
+    {
+      title: "Dizzy Creative AI",
+      description: "Your creative AI assistant for visual storytelling and multimedia magic.",
+      icon: Palette,
+      link: "/solutions/dizzy"
+    },
+    {
+      title: "Chime Social Media AI",
+      description: "Your ultimate AI-powered social media assistant for seamless content management.",
+      icon: MessageSquare,
+      link: "/solutions/chime"
+    }
   ];
 
   return (
@@ -79,110 +129,36 @@ const About: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl font-bold sm:text-5xl lg:text-6xl">
-              <span className="block text-shr-800">Who We Are and</span>
+              <span className="block text-shr-800">Powerful Solutions for</span>
               <span className="block bg-gradient-to-r from-shr-primary to-shr-accent1 bg-clip-text text-transparent">
-                What We Do
+                Modern Businesses
               </span>
             </h1>
+            <p className="mt-6 text-lg text-shr-700/80 max-w-2xl mx-auto">
+              Discover our comprehensive suite of solutions designed to help your business thrive in the digital age.
+            </p>
           </div>
         </div>
       </div>
 
-      {/* Identity Section */}
+      {/* Solutions Grid */}
       <div className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="flex items-center space-x-2 mb-6">
-                <Building2 className="h-6 w-6 text-shr-primary" />
-                <h2 className="text-2xl font-bold text-shr-800">Our Identity</h2>
-              </div>
-              <p className="text-lg text-shr-700/80 leading-relaxed">
-                SHR Intelligence is a pioneering enterprise empowerment company, specializing in dynamic SaaS technology platforms.
-              </p>
-            </div>
-            <div>
-              <div className="flex items-center space-x-2 mb-6">
-                <Target className="h-6 w-6 text-shr-primary" />
-                <h2 className="text-2xl font-bold text-shr-800">Our Mission</h2>
-              </div>
-              <p className="text-lg text-shr-700/80 leading-relaxed">
-                We are dedicated to providing scalable, adaptive solutions that revolutionize how businesses operate and grow.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* What Sets Us Apart Section */}
-      <div className="py-16 bg-gradient-to-r from-shr-primary to-shr-accent1">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="flex items-center justify-center space-x-2 mb-6">
-              <Award className="h-8 w-8 text-white" />
-              <h2 className="text-3xl font-bold text-white">What Sets Us Apart</h2>
-            </div>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {highlights.map((highlight, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-lg rounded-lg p-6 flex items-start space-x-4">
-                <Sparkles className="h-6 w-6 text-shr-secondary flex-shrink-0" />
-                <p className="text-white text-lg">{highlight}</p>
-              </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {solutions.map((solution) => (
+              <Link
+                key={solution.title}
+                to={solution.link}
+                className="group relative bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+              >
+                <div className="absolute top-0 left-0 w-full h-1 bg-shr-primary rounded-t-xl transition-all duration-300 group-hover:h-2" />
+                <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-shr-primary text-white mb-4">
+                  <solution.icon className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-semibold text-shr-800 mb-2">{solution.title}</h3>
+                <p className="text-shr-700/70">{solution.description}</p>
+              </Link>
             ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Our Approach Section */}
-      <div className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-shr-800">Our Approach</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <h3 className="text-xl font-semibold text-shr-800 mb-4">Robust Foundation</h3>
-              <p className="text-shr-700/70">A robust foundation tailored to your specific needs</p>
-            </div>
-            <div className="p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <h3 className="text-xl font-semibold text-shr-800 mb-4">Feature-Rich Environment</h3>
-              <p className="text-shr-700/70">A feature-rich environment that adapts seamlessly to your business requirements</p>
-            </div>
-            <div className="p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <h3 className="text-xl font-semibold text-shr-800 mb-4">Scalable Starter Kits</h3>
-              <p className="text-shr-700/70">Scalable starter kits designed to enhance and accelerate your business operations</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Commitment Section */}
-      <div className="py-16 bg-gradient-to-r from-shr-primary to-shr-accent1">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-white mb-6">Our Commitment</h2>
-            <p className="text-lg text-white/90 max-w-3xl mx-auto">
-              At SHR Intelligence, we are committed to empowering your enterprise with cutting-edge technology that evolves with your needs, ensuring you stay ahead in today's dynamic business landscape.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* CTA Section */}
-      <div className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-shr-primary to-shr-accent1 rounded-2xl p-8 md:p-12 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Ready to transform your business with our dynamic SaaS solutions?
-            </h2>
-            <p className="text-white/90 text-lg mb-8">
-              Contact SHR Intelligence today and unlock your organization's full potential.
-            </p>
-            <Link to="/contact" className="inline-flex items-center justify-center px-8 py-3 rounded-lg bg-white text-shr-primary hover:bg-shr-secondary transition-all duration-300 font-medium">
-              Contact Us
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
           </div>
         </div>
       </div>
@@ -197,6 +173,12 @@ const About: React.FC = () => {
                 <li><Link to="/solutions/marketing" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Marketing</Link></li>
                 <li><Link to="/solutions/analytics" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Analytics</Link></li>
                 <li><Link to="/solutions/commerce" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Commerce</Link></li>
+                <li><Link to="/solutions/recruiting" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">AI Recruiting</Link></li>
+                <li><Link to="/solutions/lexi" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Lexi AI</Link></li>
+                <li><Link to="/solutions/arlo" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Arlo Analytics</Link></li>
+                <li><Link to="/solutions/nova" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Nova eCommerce</Link></li>
+                <li><Link to="/solutions/dizzy" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Dizzy Creative</Link></li>
+                <li><Link to="/solutions/chime" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Chime Social</Link></li>
               </ul>
             </div>
             <div>
@@ -234,4 +216,4 @@ const About: React.FC = () => {
   );
 };
 
-export default About;
+export default Solutions;

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Building2, Target, Award, Sparkles, ArrowRight } from 'lucide-react';
+import { Menu, X, Check } from 'lucide-react';
 
-const About: React.FC = () => {
+const Pricing: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
@@ -14,11 +14,47 @@ const About: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const highlights: string[] = [
-    "Over 60 years of combined industry experience",
-    "Highly scalable and flexible product implementation",
-    "Solutions for organizations of all sizes",
-    "Ability to address both complex, granular problems and foundational needs"
+  const plans = [
+    {
+      name: "Starter",
+      price: "$99",
+      description: "Perfect for small businesses just getting started",
+      features: [
+        "Basic marketing tools",
+        "Analytics dashboard",
+        "Up to 5 team members",
+        "24/7 email support",
+        "1 project"
+      ]
+    },
+    {
+      name: "Professional",
+      price: "$199",
+      description: "Ideal for growing businesses with expanding needs",
+      features: [
+        "Advanced marketing tools",
+        "Custom analytics",
+        "Up to 15 team members",
+        "Priority support",
+        "5 projects",
+        "API access"
+      ],
+      popular: true
+    },
+    {
+      name: "Enterprise",
+      price: "Custom",
+      description: "Tailored solutions for large organizations",
+      features: [
+        "Full marketing suite",
+        "Advanced analytics & reporting",
+        "Unlimited team members",
+        "24/7 phone support",
+        "Unlimited projects",
+        "Custom integrations",
+        "Dedicated account manager"
+      ]
+    }
   ];
 
   return (
@@ -79,110 +115,68 @@ const About: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl font-bold sm:text-5xl lg:text-6xl">
-              <span className="block text-shr-800">Who We Are and</span>
+              <span className="block text-shr-800">Simple, Transparent</span>
               <span className="block bg-gradient-to-r from-shr-primary to-shr-accent1 bg-clip-text text-transparent">
-                What We Do
+                Pricing Plans
               </span>
             </h1>
+            <p className="mt-6 text-lg text-shr-700/80 max-w-2xl mx-auto">
+              Choose the perfect plan for your business needs. All plans include our core features with varying levels of support and capabilities.
+            </p>
           </div>
         </div>
       </div>
 
-      {/* Identity Section */}
-      <div className="py-16 bg-white">
+      {/* Pricing Grid */}
+      <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="flex items-center space-x-2 mb-6">
-                <Building2 className="h-6 w-6 text-shr-primary" />
-                <h2 className="text-2xl font-bold text-shr-800">Our Identity</h2>
-              </div>
-              <p className="text-lg text-shr-700/80 leading-relaxed">
-                SHR Intelligence is a pioneering enterprise empowerment company, specializing in dynamic SaaS technology platforms.
-              </p>
-            </div>
-            <div>
-              <div className="flex items-center space-x-2 mb-6">
-                <Target className="h-6 w-6 text-shr-primary" />
-                <h2 className="text-2xl font-bold text-shr-800">Our Mission</h2>
-              </div>
-              <p className="text-lg text-shr-700/80 leading-relaxed">
-                We are dedicated to providing scalable, adaptive solutions that revolutionize how businesses operate and grow.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* What Sets Us Apart Section */}
-      <div className="py-16 bg-gradient-to-r from-shr-primary to-shr-accent1">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="flex items-center justify-center space-x-2 mb-6">
-              <Award className="h-8 w-8 text-white" />
-              <h2 className="text-3xl font-bold text-white">What Sets Us Apart</h2>
-            </div>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {highlights.map((highlight, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-lg rounded-lg p-6 flex items-start space-x-4">
-                <Sparkles className="h-6 w-6 text-shr-secondary flex-shrink-0" />
-                <p className="text-white text-lg">{highlight}</p>
+          <div className="grid md:grid-cols-3 gap-8">
+            {plans.map((plan) => (
+              <div
+                key={plan.name}
+                className={`relative bg-white rounded-xl shadow-xl p-8 ${
+                  plan.popular ? 'ring-2 ring-shr-primary' : ''
+                }`}
+              >
+                {plan.popular && (
+                  <div className="absolute top-0 right-6 transform -translate-y-1/2">
+                    <div className="inline-flex px-4 py-1 rounded-full text-sm font-semibold bg-shr-primary text-white">
+                      Most Popular
+                    </div>
+                  </div>
+                )}
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-shr-800">{plan.name}</h3>
+                  <div className="mt-4 flex items-baseline justify-center">
+                    <span className="text-5xl font-extrabold text-shr-800">{plan.price}</span>
+                    {plan.price !== "Custom" && <span className="ml-1 text-xl text-shr-700">/month</span>}
+                  </div>
+                  <p className="mt-4 text-sm text-shr-700">{plan.description}</p>
+                </div>
+                <ul className="mt-8 space-y-4">
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="flex items-start">
+                      <div className="flex-shrink-0">
+                        <Check className="h-6 w-6 text-shr-primary" />
+                      </div>
+                      <p className="ml-3 text-sm text-shr-700">{feature}</p>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-8">
+                  <Link
+                    to="/get-started"
+                    className={`block w-full text-center px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                      plan.popular
+                        ? 'bg-gradient-to-r from-shr-primary to-shr-accent1 text-white hover:shadow-lg hover:shadow-shr-primary/50'
+                        : 'bg-shr-700/10 text-shr-700 hover:bg-shr-700/20'
+                    }`}
+                  >
+                    Get Started
+                  </Link>
+                </div>
               </div>
             ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Our Approach Section */}
-      <div className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-shr-800">Our Approach</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <h3 className="text-xl font-semibold text-shr-800 mb-4">Robust Foundation</h3>
-              <p className="text-shr-700/70">A robust foundation tailored to your specific needs</p>
-            </div>
-            <div className="p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <h3 className="text-xl font-semibold text-shr-800 mb-4">Feature-Rich Environment</h3>
-              <p className="text-shr-700/70">A feature-rich environment that adapts seamlessly to your business requirements</p>
-            </div>
-            <div className="p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <h3 className="text-xl font-semibold text-shr-800 mb-4">Scalable Starter Kits</h3>
-              <p className="text-shr-700/70">Scalable starter kits designed to enhance and accelerate your business operations</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Commitment Section */}
-      <div className="py-16 bg-gradient-to-r from-shr-primary to-shr-accent1">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-white mb-6">Our Commitment</h2>
-            <p className="text-lg text-white/90 max-w-3xl mx-auto">
-              At SHR Intelligence, we are committed to empowering your enterprise with cutting-edge technology that evolves with your needs, ensuring you stay ahead in today's dynamic business landscape.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* CTA Section */}
-      <div className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-shr-primary to-shr-accent1 rounded-2xl p-8 md:p-12 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Ready to transform your business with our dynamic SaaS solutions?
-            </h2>
-            <p className="text-white/90 text-lg mb-8">
-              Contact SHR Intelligence today and unlock your organization's full potential.
-            </p>
-            <Link to="/contact" className="inline-flex items-center justify-center px-8 py-3 rounded-lg bg-white text-shr-primary hover:bg-shr-secondary transition-all duration-300 font-medium">
-              Contact Us
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
           </div>
         </div>
       </div>
@@ -234,4 +228,4 @@ const About: React.FC = () => {
   );
 };
 
-export default About;
+export default Pricing;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, ChevronRight, Globe, Users, TrendingUp, ArrowRight, Sparkles } from 'lucide-react';
 
 interface Feature {
@@ -62,20 +63,20 @@ const Homepage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <span className="text-2xl font-bold bg-gradient-to-r from-shr-primary to-shr-accent1 bg-clip-text text-transparent">
+              <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-shr-primary to-shr-accent1 bg-clip-text text-transparent">
                 SHR-Technology
-              </span>
+              </Link>
             </div>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <button className="text-shr-700 hover:text-shr-primary transition-colors duration-300">Solutions</button>
-              <button className="text-shr-700 hover:text-shr-primary transition-colors duration-300">Pricing</button>
-              <button className="text-shr-700 hover:text-shr-primary transition-colors duration-300">About</button>
-              <button className="text-shr-700 hover:text-shr-primary transition-colors duration-300">Contact</button>
-              <button className="bg-gradient-to-r from-shr-primary to-shr-accent1 text-white px-6 py-2 rounded-lg hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-shr-primary/50">
+              <Link to="/solutions" className="text-shr-700 hover:text-shr-primary transition-colors duration-300">Solutions</Link>
+              <Link to="/pricing" className="text-shr-700 hover:text-shr-primary transition-colors duration-300">Pricing</Link>
+              <Link to="/about" className="text-shr-700 hover:text-shr-primary transition-colors duration-300">About</Link>
+              <Link to="/contact" className="text-shr-700 hover:text-shr-primary transition-colors duration-300">Contact</Link>
+              <Link to="/get-started" className="bg-gradient-to-r from-shr-primary to-shr-accent1 text-white px-6 py-2 rounded-lg hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-shr-primary/50">
                 Get Started
-              </button>
+              </Link>
             </div>
 
             {/* Mobile menu button */}
@@ -94,18 +95,19 @@ const Homepage: React.FC = () => {
         {isMenuOpen && (
           <div className="md:hidden absolute w-full bg-white/95 backdrop-blur-md">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <button className="block w-full text-left px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">Solutions</button>
-              <button className="block w-full text-left px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">Pricing</button>
-              <button className="block w-full text-left px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">About</button>
-              <button className="block w-full text-left px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">Contact</button>
-              <button className="w-full text-left px-3 py-2 bg-gradient-to-r from-shr-primary to-shr-accent1 text-white rounded-lg hover:scale-105 transition-all duration-300">
+              <Link to="/solutions" className="block w-full text-left px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">Solutions</Link>
+              <Link to="/pricing" className="block w-full text-left px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">Pricing</Link>
+              <Link to="/about" className="block w-full text-left px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">About</Link>
+              <Link to="/contact" className="block w-full text-left px-3 py-2 text-shr-700 hover:text-shr-primary transition-colors duration-300">Contact</Link>
+              <Link to="/get-started" className="block w-full text-left px-3 py-2 bg-gradient-to-r from-shr-primary to-shr-accent1 text-white rounded-lg hover:scale-105 transition-all duration-300">
                 Get Started
-              </button>
+              </Link>
             </div>
           </div>
         )}
       </nav>
 
+      {/* Rest of the component remains unchanged */}
       {/* Hero Section */}
       <div className="relative pt-16 pb-8 sm:pt-24 sm:pb-16 lg:pt-32 lg:pb-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -127,13 +129,13 @@ const Homepage: React.FC = () => {
                 Connect with verified marketing agents who understand your local market and help your business grow. Start scaling your presence today.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-                <button className="px-8 py-4 bg-gradient-to-r from-shr-primary to-shr-accent1 text-white rounded-lg font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-shr-primary/50 flex items-center justify-center">
+                <Link to="/get-started" className="px-8 py-4 bg-gradient-to-r from-shr-primary to-shr-accent1 text-white rounded-lg font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-shr-primary/50 flex items-center justify-center">
                   Get Started
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </button>
-                <button className="px-8 py-4 border-2 border-shr-700 text-shr-700 rounded-lg font-medium hover:bg-shr-700 hover:text-white transition-all duration-300">
+                </Link>
+                <Link to="/demo" className="px-8 py-4 border-2 border-shr-700 text-shr-700 rounded-lg font-medium hover:bg-shr-700 hover:text-white transition-all duration-300">
                   Watch Demo
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -195,10 +197,10 @@ const Homepage: React.FC = () => {
             </p>
           </div>
           <div className="mt-8 lg:mt-0 flex flex-shrink-0 gap-4">
-            <button className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white text-shr-primary hover:bg-shr-secondary transition-all duration-300 font-medium">
+            <Link to="/get-started" className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white text-shr-primary hover:bg-shr-secondary transition-all duration-300 font-medium">
               Get Started
               <ChevronRight className="ml-2 h-5 w-5" />
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -210,32 +212,32 @@ const Homepage: React.FC = () => {
             <div>
               <h3 className="text-sm font-semibold text-shr-800 tracking-wider uppercase">Solutions</h3>
               <ul className="mt-4 space-y-4">
-                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Marketing</button></li>
-                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Analytics</button></li>
-                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Commerce</button></li>
+                <li><Link to="/solutions/marketing" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Marketing</Link></li>
+                <li><Link to="/solutions/analytics" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Analytics</Link></li>
+                <li><Link to="/solutions/commerce" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Commerce</Link></li>
               </ul>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-shr-800 tracking-wider uppercase">Support</h3>
               <ul className="mt-4 space-y-4">
-                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Documentation</button></li>
-                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Guides</button></li>
-                <li><a href="mailto:support@shr-technology.com" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Contact</a></li>
+                <li><Link to="/docs" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Documentation</Link></li>
+                <li><Link to="/guides" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Guides</Link></li>
+                <li><Link to="/contact" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Contact</Link></li>
               </ul>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-shr-800 tracking-wider uppercase">Company</h3>
               <ul className="mt-4 space-y-4">
-                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">About</button></li>
-                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Blog</button></li>
-                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Careers</button></li>
+                <li><Link to="/about" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">About</Link></li>
+                <li><Link to="/blog" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Blog</Link></li>
+                <li><Link to="/careers" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Careers</Link></li>
               </ul>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-shr-800 tracking-wider uppercase">Legal</h3>
               <ul className="mt-4 space-y-4">
-                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Privacy</button></li>
-                <li><button className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Terms</button></li>
+                <li><Link to="/privacy" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Privacy</Link></li>
+                <li><Link to="/terms" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Terms</Link></li>
               </ul>
             </div>
           </div>
