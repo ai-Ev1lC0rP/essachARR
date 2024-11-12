@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Layers, BarChart, ShoppingBag, Users, Pen, BarChart2, Store, Palette, MessageSquare } from 'lucide-react';
+import { Menu, X, Layers, BarChart, ShoppingBag, Users, Pen, BarChart2, Store, Palette, MessageSquare, Brain, Mail } from 'lucide-react';
 
 const Solutions: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -15,6 +15,18 @@ const Solutions: React.FC = () => {
   }, []);
 
   const solutions = [
+    {
+      title: "Lumi AI Assistant",
+      description: "Your personal development partner powered by AI for growth and self-improvement.",
+      icon: Brain,
+      link: "/solutions/lumi"
+    },
+    {
+      title: "Lora Email Assistant",
+      description: "Premier AI email marketing assistant for compelling campaigns and higher conversions.",
+      icon: Mail,
+      link: "/solutions/lora"
+    },
     {
       title: "Marketing Solutions",
       description: "Powerful tools to enhance your marketing strategies and reach.",
@@ -170,6 +182,8 @@ const Solutions: React.FC = () => {
             <div>
               <h3 className="text-sm font-semibold text-shr-800 tracking-wider uppercase">Solutions</h3>
               <ul className="mt-4 space-y-4">
+                <li><Link to="/solutions/lumi" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Lumi AI</Link></li>
+                <li><Link to="/solutions/lora" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Lora Email</Link></li>
                 <li><Link to="/solutions/marketing" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Marketing</Link></li>
                 <li><Link to="/solutions/analytics" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Analytics</Link></li>
                 <li><Link to="/solutions/commerce" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Commerce</Link></li>
