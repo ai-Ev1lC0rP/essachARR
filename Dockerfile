@@ -1,5 +1,5 @@
 # Use Node 18 alpine as base image
-FROM node:18-alpine
+FROM node:18-alpine as base
 
 # Set working directory
 WORKDIR /app
@@ -7,14 +7,24 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
+# Development stage
+FROM base as development
 RUN npm install
-
-# Copy project files
 COPY . .
-
-# Expose port 3000
 EXPOSE 3000
+CMD ["npm", "start"]
 
-# Start the application
+# Test stage
+FROM base as test
+ENV CI=true
+RUN npm install
+COPY . .
+CMD ["npm", "test", "--watchAll=false"]
+
+# Production stage
+FROM base as production
+RUN npm ci --only=production
+COPY . .
+RUN npm run build
+EXPOSE 3000
 CMD ["npm", "start"]

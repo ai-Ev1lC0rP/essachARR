@@ -2,11 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @apply bg-white text-shr-800;
+  overflow-x: hidden;
+}
+
+/* Smooth section transitions */
+.section-transition {
+  @apply transition-all duration-1000 ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-shr-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-shr-primary/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-shr-primary;
+}
+
+/* Fade animations */
+.fade-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms ease-in-out, transform 500ms ease-out;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 500ms ease-in-out, transform 500ms ease-out;
+}
+
+/* Section spacing */
+.section-spacing {
+  @apply py-16 md:py-24;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-gradient-to-r from-shr-primary to-shr-accent1 bg-clip-text text-transparent;
 }
