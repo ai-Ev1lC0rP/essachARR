@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/essachARR/static/css/main.4f7bb73f.css",
-    "main.js": "/essachARR/static/js/main.55c964f6.js",
-    "index.html": "/essachARR/index.html",
-    "main.4f7bb73f.css.map": "/essachARR/static/css/main.4f7bb73f.css.map",
-    "main.55c964f6.js.map": "/essachARR/static/js/main.55c964f6.js.map"
+    "main.css": "/static/css/main.4f7bb73f.css",
+    "main.js": "/static/js/main.55c964f6.js",
+    "index.html": "/index.html",
+    "main.4f7bb73f.css.map": "/static/css/main.4f7bb73f.css.map",
+    "main.55c964f6.js.map": "/static/js/main.55c964f6.js.map"
   },
   "entrypoints": [
     "static/css/main.4f7bb73f.css",
