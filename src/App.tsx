@@ -27,7 +27,16 @@ const router = createBrowserRouter(
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/contact" element={<Contact />} />
     </>
-  )
+  ),
+  {
+    future: {
+      // Enable future flags available in v6.20.0
+      v7_startTransition: true,
+      v7_relativeSplatPath: true,
+      v7_fetcherPersist: true,
+      v7_normalizeFormMethod: true
+    }
+  }
 );
 
 const App: React.FC = () => {
