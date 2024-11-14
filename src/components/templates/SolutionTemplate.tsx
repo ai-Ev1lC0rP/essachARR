@@ -1,10 +1,10 @@
 import React from 'react';
-import { Icon } from 'lucide-react';
+import { LucideIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 // Types for solution page data
 interface Feature {
-  icon: Icon;
+  icon: LucideIcon;
   title: string;
   description: string;
 }
