@@ -22,11 +22,15 @@ export const useIntersectionObserver = ({
     const observer = new IntersectionObserver(
       ([entry]) => {
         const isElementVisible = entry.isIntersecting;
-        setIsVisible(isElementVisible);
         
-        if (isElementVisible && triggerOnce) {
-          setHasTriggered(true);
-          observer.unobserve(element);
+        if (triggerOnce) {
+          if (isElementVisible) {
+            setIsVisible(true);
+            setHasTriggered(true);
+            observer.unobserve(element);
+          }
+        } else {
+          setIsVisible(isElementVisible);
         }
       },
       { threshold, rootMargin }
@@ -41,5 +45,8 @@ export const useIntersectionObserver = ({
     };
   }, [threshold, rootMargin, triggerOnce, hasTriggered]);
 
-  return { elementRef, isVisible };
+  // If triggerOnce is true and element has been triggered, maintain visible state
+  const effectiveIsVisible = triggerOnce && hasTriggered ? true : isVisible;
+
+  return { elementRef, isVisible: effectiveIsVisible };
 };

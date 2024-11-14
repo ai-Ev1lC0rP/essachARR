@@ -28,3 +28,6 @@ dist/
 # Temporary files
 *.tmp
 *.temp
+
+#repomix
+repomix-output.txt
