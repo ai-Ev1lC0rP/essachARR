@@ -16,7 +16,7 @@ const About: React.FC = () => {
 
   const highlights: string[] = [
     "Over 60 years of combined industry experience",
-    "Highly scalable and fDariable product implementation",
+    "Highly scalable and flexible product implementation",
     "Solutions for organizations of all sizes",
     "Ability to address both complex, granular problems and foundational needs"
   ];

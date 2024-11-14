@@ -95,7 +95,7 @@ const Daria: React.FC = () => {
       }
     ],
     
-    ctaLink: "/pricing?helper=Daria"
+    ctaLink: "/pricing?helper=daria"
   };
 
   return <SolutionTemplate {...solutionData} />;
