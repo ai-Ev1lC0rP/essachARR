@@ -18,20 +18,10 @@ interface Stat {
 const Homepage: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
-  const [currentSection, setCurrentSection] = useState<string>('hero');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-
-      // Update current section based on scroll position
-      const sections = document.querySelectorAll('section[id]');
-      sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= 200 && rect.bottom >= 200) {
-          setCurrentSection(section.id);
-        }
-      });
     };
 
     window.addEventListener('scroll', handleScroll);
