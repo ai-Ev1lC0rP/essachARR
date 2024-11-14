@@ -42,7 +42,7 @@ const Commerce: React.FC = () => {
       {
         icon: Settings,
         title: "Store Customization",
-        description: "Flexible customization options for your online store."
+        description: "FDariable customization options for your online store."
       },
       {
         icon: Globe,

@@ -6,7 +6,7 @@ import Solutions from './components/Solutions';
 import Pricing from './components/Pricing';
 import Contact from './components/Contact';
 import Recruiting from './components/solutions/Recruiting';
-import Lexi from './components/solutions/Lexi';
+import Daria from './components/solutions/Daria';
 import Arlo from './components/solutions/Arlo';
 import Nova from './components/solutions/Nova';
 import Dizzy from './components/solutions/Dizzy';
@@ -19,7 +19,7 @@ const router = createHashRouter(
       <Route path="/about" element={<About />} />
       <Route path="/solutions" element={<Solutions />} />
       <Route path="/solutions/recruiting" element={<Recruiting />} />
-      <Route path="/solutions/lexi" element={<Lexi />} />
+      <Route path="/solutions/Daria" element={<Daria />} />
       <Route path="/solutions/arlo" element={<Arlo />} />
       <Route path="/solutions/nova" element={<Nova />} />
       <Route path="/solutions/dizzy" element={<Dizzy />} />

@@ -52,10 +52,10 @@ const Solutions: React.FC = () => {
       link: "/solutions/recruiting"
     },
     {
-      title: "Lexi AI Copywriter",
+      title: "Daria AI Copywriter",
       description: "Transform ideas into compelling narratives with AI-powered content creation.",
       icon: Pen,
-      link: "/solutions/lexi"
+      link: "/solutions/Daria"
     },
     {
       title: "Arlo Data Analytics",
@@ -188,7 +188,7 @@ const Solutions: React.FC = () => {
                 <li><Link to="/solutions/analytics" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Analytics</Link></li>
                 <li><Link to="/solutions/commerce" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Commerce</Link></li>
                 <li><Link to="/solutions/recruiting" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">AI Recruiting</Link></li>
-                <li><Link to="/solutions/lexi" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Lexi AI</Link></li>
+                <li><Link to="/solutions/Daria" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Daria AI</Link></li>
                 <li><Link to="/solutions/arlo" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Arlo Analytics</Link></li>
                 <li><Link to="/solutions/nova" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Nova eCommerce</Link></li>
                 <li><Link to="/solutions/dizzy" className="text-shr-700/70 hover:text-shr-primary transition-colors duration-300">Dizzy Creative</Link></li>

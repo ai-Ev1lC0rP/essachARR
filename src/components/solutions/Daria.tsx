@@ -2,11 +2,11 @@ import React from 'react';
 import { Brain, Globe, Clock, Shield, Power, Database } from 'lucide-react';
 import SolutionTemplate from '../templates/SolutionTemplate';
 
-const Lexi: React.FC = () => {
+const Daria: React.FC = () => {
   const solutionData = {
-    title: "Meet Lexi",
+    title: "Meet Daria",
     subtitle: "Your AI-powered content creator",
-    description: "Whether it's shaping engaging Instagram captions or scripting dynamic video ads, Lexi transforms ideas into compelling narratives that captivate and convert.",
+    description: "Whether it's shaping engaging Instagram captions or scripting dynamic video ads, Daria transforms ideas into compelling narratives that captivate and convert.",
     
     stats: [
       { value: "4x", label: "more targeted output compared to general AI models*" },
@@ -44,7 +44,7 @@ const Lexi: React.FC = () => {
       {
         icon: Database,
         title: "Synapse AI brain",
-        description: "Integrate files, websites, and enrich Lexi's expertise with your insights."
+        description: "Integrate files, websites, and enrich Daria's expertise with your insights."
       }
     ],
     
@@ -52,7 +52,7 @@ const Lexi: React.FC = () => {
       {
         number: "1",
         title: "Share Your Task",
-        description: "Tell Lexi what content you need"
+        description: "Tell Daria what content you need"
       },
       {
         number: "2",
@@ -95,10 +95,10 @@ const Lexi: React.FC = () => {
       }
     ],
     
-    ctaLink: "/pricing?helper=lexi"
+    ctaLink: "/pricing?helper=Daria"
   };
 
   return <SolutionTemplate {...solutionData} />;
 };
 
-export default Lexi;
+export default Daria;
