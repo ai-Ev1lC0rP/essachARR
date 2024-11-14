@@ -31,14 +31,12 @@ jobs:
 
       - name: Install Dependencies
         run: npm ci
-        working-directory: ./essachARR
 
       - name: Build
         run: CI=false npm run build
-        working-directory: ./essachARR
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: essachARR/build
+          folder: build
           branch: gh-pages

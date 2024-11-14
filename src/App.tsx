@@ -1,5 +1,5 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider, Route, createRoutesFromElements } from 'react-router-dom';
+import { createHashRouter, RouterProvider, Route, createRoutesFromElements } from 'react-router-dom';
 import Homepage from './components/Homepage';
 import About from './components/About';
 import Solutions from './components/Solutions';
@@ -12,7 +12,7 @@ import Nova from './components/solutions/Nova';
 import Dizzy from './components/solutions/Dizzy';
 import Chime from './components/solutions/Chime';
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<Homepage />} />
