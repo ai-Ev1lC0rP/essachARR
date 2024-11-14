@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/essachARR/static/css/main.4f7bb73f.css",
+    "main.js": "/essachARR/static/js/main.33a69112.js",
+    "index.html": "/essachARR/index.html",
+    "main.4f7bb73f.css.map": "/essachARR/static/css/main.4f7bb73f.css.map",
+    "main.33a69112.js.map": "/essachARR/static/js/main.33a69112.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4f7bb73f.css",
+    "static/js/main.33a69112.js"
+  ]
+}
